@@ -1,6 +1,5 @@
-import 'package:first_day/screen/sign_in/otp_screen.dart';
+import 'package:first_day/router/app_router.dart';
 import 'package:flutter/material.dart';
-
 import '../../components/custom_button.dart';
 import '../../utils/styles.dart';
 
@@ -87,9 +86,9 @@ class ForgotPassword extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: CustomButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushNamed(
                         context,
-                        MaterialPageRoute(builder: (context) => const OtpScreen()));
+                        AppRoutes.otp);
                   },
                   text: "",
                   color: Colors.orange.shade300,

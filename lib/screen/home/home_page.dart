@@ -1,8 +1,7 @@
+import 'package:first_day/router/app_router.dart';
 import 'package:first_day/screen/home/widget/custom_card.dart';
 import 'package:first_day/utils/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +21,12 @@ class _HomePageState extends State<HomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: SvgPicture.asset("assets/icon/find_friend.svg", width: screenHeight * 0.9,),
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.find_friend);
+
+              },
+                child: SvgPicture.asset("assets/icon/find_friend.svg", width: screenHeight * 0.9,)),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 16, bottom: 16),
@@ -34,11 +38,16 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Discover", style: text_bold),
-                      Row(
-                        children: [
-                          Text("View all", style: TextStyle(fontWeight: FontWeight.bold, color: color_primary),),
-                          Icon(Icons.arrow_right_alt, color: color_primary,),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, AppRoutes.discover);
+                        },
+                        child: Row(
+                          children: [
+                            Text("View all", style: TextStyle(fontWeight: FontWeight.bold, color: color_primary),),
+                            Icon(Icons.arrow_right_alt, color: color_primary,),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -111,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: [
                           Text("View all", style: TextStyle(fontWeight: FontWeight.bold, color: color_primary),),
-                          Icon(Icons.arrow_right_alt, color: color_primary,),
+                          Icon(Icons.arrow_forward_ios, color: color_primary,),
                         ],
                       ),
                     ),
@@ -145,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         children: [
                           Text("View all", style: TextStyle(fontWeight: FontWeight.bold, color: color_primary),),
-                          Icon(Icons.arrow_right_alt, color: color_primary,),
+                          Icon(Icons.arrow_forward_ios, color: color_primary,),
                         ],
                       ),
                     ],
@@ -185,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         children: [
                           Text("View all", style: TextStyle(fontWeight: FontWeight.bold, color: color_primary),),
-                          Icon(Icons.arrow_right_alt, color: color_primary,),
+                          Icon(Icons.arrow_forward_ios, color: color_primary,),
                         ],
                       ),
                     ],

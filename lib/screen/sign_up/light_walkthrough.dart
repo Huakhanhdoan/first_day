@@ -1,5 +1,6 @@
 import 'package:first_day/components/custom_button.dart';
 import 'package:first_day/components/slider.dart';
+import 'package:first_day/router/app_router.dart';
 import 'package:first_day/screen/sign_in/sign_in.dart';
 import 'package:first_day/screen/sign_up/light_create_account.dart';
 import 'package:flutter/material.dart';
@@ -37,19 +38,17 @@ class LightWalkthrough extends StatelessWidget {
 
                   CustomButton(
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushNamed(
                             context,
-                            MaterialPageRoute(
-                                builder: (_) => const LightCreateAccount()));
+                            AppRoutes.sign_up);
                       },
                       text: "",
                       color: Colors.orange.shade300),
                   CustomButton(
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushNamed(
                             context,
-                            MaterialPageRoute(
-                                builder: (_) => const SignIn()));
+                            AppRoutes.sign_in);
                       },
                       text: "I ALREADY HAVE AN ACCOUNT",
                       color: const Color.fromRGBO(195, 182, 255, 1)),

@@ -49,7 +49,7 @@ void showLoadingDialog(BuildContext context) {
   );
 
   // Tắt dialog sau 2 giây
-  Future.delayed(Duration(seconds: 2), () {
+  Future.delayed(const Duration(seconds: 2), () {
     Navigator.of(context).pop();
   });
 }

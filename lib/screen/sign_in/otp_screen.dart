@@ -1,7 +1,6 @@
-import 'package:first_day/screen/sign_in/create_new_password.dart';
+import 'package:first_day/router/app_router.dart';
 import 'package:first_day/utils/styles.dart';
 import 'package:flutter/material.dart';
-
 import '../../components/custom_button.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -116,9 +115,9 @@ int _time = 60;
                 padding: const EdgeInsets.all(16.0),
                 child: CustomButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.pushReplacementNamed(
                         context,
-                        MaterialPageRoute(builder: (context) =>  CreateNewPassword()));
+                        AppRoutes.creat_new_password,);
                   },
                   text: "",
                   color: Colors.orange.shade300,

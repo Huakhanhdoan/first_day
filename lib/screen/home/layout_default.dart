@@ -2,9 +2,11 @@ import 'package:first_day/screen/home/home_page.dart';
 import 'package:first_day/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:iconly/iconly.dart';
 
 class LayoutDefault extends StatefulWidget {
-  const LayoutDefault({super.key});
+  final int? index;
+   const LayoutDefault({ super.key, this.index});
 
   @override
   State<LayoutDefault> createState() => _LayoutDefaultState();
@@ -12,6 +14,15 @@ class LayoutDefault extends StatefulWidget {
 
 class _LayoutDefaultState extends State<LayoutDefault> {
 
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    if(widget.index != null){
+      _selectedIndex = widget.index!;
+    }
+  }
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -35,9 +46,10 @@ class _LayoutDefaultState extends State<LayoutDefault> {
             ),
             Row(
               children: [
-                IconButton(onPressed: () {}, icon: const Icon(Icons.search_outlined)),
+                IconButton(onPressed: () {
+                                }, icon:  const Icon(IconlyLight.search)),
                 const SizedBox(width: 10,),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.notifications_none)),
+                IconButton(onPressed: () {}, icon: const Icon(IconlyLight.notification)),
               ],
             ),
           ]

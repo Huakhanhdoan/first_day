@@ -1,3 +1,4 @@
+import 'package:first_day/router/app_router.dart';
 import 'package:first_day/screen/sign_up/light_walkthrough.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,9 +18,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     // Chuyển hướng đến màn hình Home sau 3 giây
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
+      Navigator.pushReplacementNamed(
         context,
-        MaterialPageRoute(builder: (context) => const LightWalkthrough()), // Thay HomeScreen bằng màn hình bạn muốn chuyển hướng đến
+        AppRoutes.walk_though, // Thay HomeScreen bằng màn hình bạn muốn chuyển hướng đến
       );
     });
   }

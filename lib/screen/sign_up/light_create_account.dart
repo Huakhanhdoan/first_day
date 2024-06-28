@@ -2,6 +2,7 @@ import 'package:first_day/components/custom_button.dart';
 import 'package:first_day/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../router/app_router.dart';
 import '../sign_in/sign_in.dart';
 import 'widget/dialog.dart';
 import 'widget/form_register.dart';
@@ -105,9 +106,9 @@ class LightCreateAccount extends StatelessWidget {
                         if (step.value == 4) {
                           showLoadingDialog(context);
                           Future.delayed(const Duration(seconds: 2), () {
-                            Navigator.pushAndRemoveUntil(
+                            Navigator.pushNamedAndRemoveUntil(
                               context,
-                              MaterialPageRoute(builder: (context) => const SignIn()),
+                              AppRoutes.sign_in,
                                   (Route<dynamic> route) => false,);
                           });
                         }

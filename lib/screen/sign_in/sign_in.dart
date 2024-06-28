@@ -1,9 +1,7 @@
 import 'package:first_day/components/custom_button.dart';
-import 'package:first_day/screen/home/layout_default.dart';
-import 'package:first_day/screen/sign_in/forgot_password.dart';
+import 'package:first_day/router/app_router.dart';
 import 'package:first_day/screen/sign_in/widget/check_box.dart';
 import 'package:first_day/utils/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -122,9 +120,9 @@ class _SignInState extends State<SignIn> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(onPressed: () {
-                    Navigator.push(
+                    Navigator.pushNamed(
                         context,
-                        MaterialPageRoute(builder: (context) => const ForgotPassword()));
+                       AppRoutes.forgot_password);
                   }, child: const Text("Forgot password?", style: TextStyle(fontWeight: FontWeight.bold),)),
                 ],
               ),
@@ -142,9 +140,9 @@ class _SignInState extends State<SignIn> {
               padding: const EdgeInsets.all(16.0),
               child: CustomButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
+                  Navigator.pushNamedAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => const LayoutDefault()),
+                   AppRoutes.home,
                         (Route<dynamic> route) => false,);
                   },
                 text: "",

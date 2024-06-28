@@ -1,10 +1,8 @@
 import 'package:first_day/screen/sign_in/widget/check_box.dart';
 import 'package:first_day/screen/sign_in/widget/dialog_signup.dart';
 import 'package:flutter/material.dart';
-
 import '../../components/custom_button.dart';
 import '../../utils/styles.dart';
-import 'sign_in.dart';
 class CreateNewPassword extends StatefulWidget {
   const CreateNewPassword({super.key});
 

@@ -3,9 +3,8 @@ import 'package:first_day/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
+import '../../../router/app_router.dart';
 
-import '../sign_in.dart';
 
 void dialogSignup(BuildContext context) {
   showDialog(
@@ -41,9 +40,9 @@ void dialogSignup(BuildContext context) {
               ),
              CustomButton(onPressed: () {
                Navigator.pop(context);
-               Navigator.pushAndRemoveUntil(
+               Navigator.pushNamedAndRemoveUntil(
                  context,
-                 MaterialPageRoute(builder: (context) => const SignIn()),
+                  AppRoutes.home,
                      (Route<dynamic> route) => false,);
              }, text: "", color: Colors.orange.shade300,),
               // Biểu tượng loading
